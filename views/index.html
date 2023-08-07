@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <h1 class="text text-danger text-center">
+      Quan Ly Hoc Vien Nghien Cuu & Giang Day
+    </h1>
+    <!-- Button trigger modal -->
+    <button
+      id="btnOpenAdd"
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+    >
+      +Them Doi Tuong
+    </button>
+    <div class="form-group">
+      <label class="col-sm-2 col-form-label">Loc:</label>
+      <div class="col-sm-2">
+        <select id="fillterName" class="custom-select">
+          <option value="all" selected>Loc Thu Tu Ho Ten</option>
+          <option value="AdenZ">A den Z</option>
+          <option value="ZdenA">Z den A</option>
+        </select>
+        <select id="fillterType" class="custom-select">
+          <option value="all">Loc Doi Tuong</option>
+          <option value="Student">Student</option>
+          <option value="Employee">Employee</option>
+          <option value="Customer">Customer</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Add Person</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <select id="type" class="custom-select">
+                <option selected>Chon Doi Tuong</option>
+                <option value="Student">Student</option>
+                <option value="Employee">Employee</option>
+                <option value="Customer">Customer</option>
+              </select>
+              <div
+                id="errorType"
+                class="text-danger"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="form-group">
+              <label>Ma Code:</label>
+              <input
+                id="code"
+                type="number"
+                class="form-control"
+                value
+                required
+              />
+              <div
+                id="errorCode"
+                class="text-danger"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="form-group">
+              <label>Ho Ten:</label>
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                value
+                required
+              />
+              <div
+                id="errorName"
+                class="text-danger"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="form-group">
+              <label>Dia Chi:</label>
+              <input
+                id="address"
+                type="text"
+                class="form-control"
+                value
+                required
+              />
+              <div
+                id="errorAddress"
+                class="text-danger"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="form-group">
+              <label>Ma Email:</label>
+              <input
+                id="email"
+                type="text"
+                class="form-control"
+                value
+                required
+              />
+              <div
+                id="errorEmail"
+                class="text-danger"
+                style="display: none"
+              ></div>
+            </div>
+            <div class="form-group">
+              <div style="display: none" id="typeStudent">
+                <label>Diem Toan:</label>
+                <input
+                  id="toan"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorToan"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+                <label>Diem Ly:</label>
+                <input
+                  id="ly"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorLy"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+                <label>Diem Hoa:</label>
+                <input
+                  id="hoa"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorHoa"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+              </div>
+              <div style="display: none" id="typeEmployee">
+                <label>So Ngay Lam Viec:</label>
+                <input
+                  id="soNgayLamViec"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorSoNgayLamViec"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+                <label>Luong Theo Ngay:</label>
+                <input
+                  id="luongTheoNgay"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorLuongTheoNgay"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+              </div>
+              <div style="display: none" id="typeCustomer">
+                <label>Ten Cong Ty:</label>
+                <input
+                  id="tenCongTy"
+                  type="text"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorTenCongTy"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+                <label>Gia Tri Hoa Don:</label>
+                <input
+                  id="giaTriHoaDon"
+                  type="number"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorGiaTriHoaDon"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+                <label>Danh Gia:</label>
+                <input
+                  id="danhGia"
+                  type="text"
+                  class="form-control"
+                  value
+                  required
+                />
+                <div
+                  id="errorDanhGia"
+                  class="text-danger"
+                  style="display: none"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="btnClose"
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="btnUpdate" type="button" class="btn btn-warning">
+              Update
+            </button>
+            <button id="btnAdd" onclick="themPerson()" type="button" class="btn btn-primary">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr class="text-white bg-danger">
+          <th>Ma</th>
+          <th>Ho Ten</th>
+          <th>Dia Chi</th>
+          <th>Email</th>
+          <th>Doi Tuong</th>
+          <th>Mo Ta</th>
+          <th>Thay Doi</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyPerson"></tbody>
+    </table>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="../controllers/index.js"></script>
+  </body>
+</html>
